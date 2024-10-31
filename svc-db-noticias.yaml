@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-db-noticias
+spec:
+  type: ClusterIP 
+  selector: 
+    app: db-noticias  # Este deve corresponder à label do Pod que você deseja expor
+  ports:
+  - port: 3306
+    targetPort: 3306  # Porta do Pod que o Service deve encaminhar (opcional, mas recomendado)
